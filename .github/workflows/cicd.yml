@@ -9,14 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'
-        include-prerelease: true
-
-    - name: Build with dotnet
-      run: dotnet build ./eShopOnWeb.sln --configuration Release
     
-    - name: Test with dotnet
-      run: dotnet test ./eShopOnWeb.sln --configuration Release
+    - name: MsBuild
+      run: MSBuild.exe eShopOnWeb.sln
